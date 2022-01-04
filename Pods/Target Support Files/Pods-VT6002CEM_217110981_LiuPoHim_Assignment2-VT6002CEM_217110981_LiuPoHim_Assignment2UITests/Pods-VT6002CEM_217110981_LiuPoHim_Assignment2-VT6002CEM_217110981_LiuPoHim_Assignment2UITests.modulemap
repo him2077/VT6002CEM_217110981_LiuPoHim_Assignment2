@@ -1,0 +1,6 @@
+framework module Pods_VT6002CEM_217110981_LiuPoHim_Assignment2_VT6002CEM_217110981_LiuPoHim_Assignment2UITests {
+  umbrella header "Pods-VT6002CEM_217110981_LiuPoHim_Assignment2-VT6002CEM_217110981_LiuPoHim_Assignment2UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

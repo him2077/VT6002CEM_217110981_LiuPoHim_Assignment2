@@ -23,6 +23,8 @@
 		9F4596B82784A81600EBF6A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4596B42784A81600EBF6A7 /* LoginViewController.swift */; };
 		9F4596BA2784A83A00EBF6A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4596B92784A83A00EBF6A7 /* Main.storyboard */; };
 		9F4596BC2784A92C00EBF6A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F4596BB2784A92B00EBF6A7 /* GoogleService-Info.plist */; };
+		9FABEA622785DC3100EFA84C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FABEA612785DC3100EFA84C /* TabBarController.swift */; };
+		9FABEA642785F5C800EFA84C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FABEA632785F5C800EFA84C /* UserViewController.swift */; };
 		B8DFE5C820C9D43118D3BC03 /* Pods_VT6002CEM_217110981_LiuPoHim_Assignment2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8FE7714EA4EEB277FF185B /* Pods_VT6002CEM_217110981_LiuPoHim_Assignment2.framework */; };
 		DFE22735984D71CA1B9D2352 /* Pods_VT6002CEM_217110981_LiuPoHim_Assignment2_VT6002CEM_217110981_LiuPoHim_Assignment2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F9055DE9C3E9EF6007D0DE /* Pods_VT6002CEM_217110981_LiuPoHim_Assignment2_VT6002CEM_217110981_LiuPoHim_Assignment2UITests.framework */; };
 		FB76154CEA0DA831A2AB0C34 /* Pods_VT6002CEM_217110981_LiuPoHim_Assignment2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C27FC5917B08F16597259B8 /* Pods_VT6002CEM_217110981_LiuPoHim_Assignment2Tests.framework */; };
@@ -71,6 +73,8 @@
 		9F4596B42784A81600EBF6A7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9F4596B92784A83A00EBF6A7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9F4596BB2784A92B00EBF6A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9FABEA612785DC3100EFA84C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		9FABEA632785F5C800EFA84C /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		AEDC81AC727D3A1D9A36A646 /* Pods-VT6002CEM_217110981_LiuPoHim_Assignment2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VT6002CEM_217110981_LiuPoHim_Assignment2Tests.debug.xcconfig"; path = "Target Support Files/Pods-VT6002CEM_217110981_LiuPoHim_Assignment2Tests/Pods-VT6002CEM_217110981_LiuPoHim_Assignment2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC8FE7714EA4EEB277FF185B /* Pods_VT6002CEM_217110981_LiuPoHim_Assignment2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VT6002CEM_217110981_LiuPoHim_Assignment2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E492C62654DD582F8BD65640 /* Pods-VT6002CEM_217110981_LiuPoHim_Assignment2-VT6002CEM_217110981_LiuPoHim_Assignment2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VT6002CEM_217110981_LiuPoHim_Assignment2-VT6002CEM_217110981_LiuPoHim_Assignment2UITests.release.xcconfig"; path = "Target Support Files/Pods-VT6002CEM_217110981_LiuPoHim_Assignment2-VT6002CEM_217110981_LiuPoHim_Assignment2UITests/Pods-VT6002CEM_217110981_LiuPoHim_Assignment2-VT6002CEM_217110981_LiuPoHim_Assignment2UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 				9F45968A2784A5DF00EBF6A7 /* LaunchScreen.storyboard */,
 				9F45968D2784A5DF00EBF6A7 /* Info.plist */,
 				9F4596852784A5DD00EBF6A7 /* VT6002CEM_217110981_LiuPoHim_Assignment2.xcdatamodeld */,
+				9FABEA612785DC3100EFA84C /* TabBarController.swift */,
+				9FABEA632785F5C800EFA84C /* UserViewController.swift */,
 			);
 			path = VT6002CEM_217110981_LiuPoHim_Assignment2;
 			sourceTree = "<group>";
@@ -431,6 +437,8 @@
 				9F4596B82784A81600EBF6A7 /* LoginViewController.swift in Sources */,
 				9F4596B62784A81600EBF6A7 /* LocationViewController.swift in Sources */,
 				9F4596B52784A81600EBF6A7 /* SignUpViewController.swift in Sources */,
+				9FABEA642785F5C800EFA84C /* UserViewController.swift in Sources */,
+				9FABEA622785DC3100EFA84C /* TabBarController.swift in Sources */,
 				9F4596812784A5DD00EBF6A7 /* ViewController.swift in Sources */,
 				9F4596872784A5DD00EBF6A7 /* VT6002CEM_217110981_LiuPoHim_Assignment2.xcdatamodeld in Sources */,
 				9F45967D2784A5DD00EBF6A7 /* AppDelegate.swift in Sources */,

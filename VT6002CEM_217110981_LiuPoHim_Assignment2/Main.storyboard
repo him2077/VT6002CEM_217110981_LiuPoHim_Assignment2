@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Activities-->
         <scene sceneID="Xkk-Q7-T9h">
             <objects>
                 <tableViewController id="Z5G-OS-ovW" sceneMemberID="viewController">
@@ -52,33 +52,58 @@
                             <outlet property="delegate" destination="Z5G-OS-ovW" id="Dxk-ML-4gd"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Activities" image="character.book.closed" catalog="system" selectedImage="character.book.closed" id="igj-nJ-zKg"/>
                     <navigationItem key="navigationItem" id="IE1-85-Zis"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OnU-uX-xnR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969.56521739130437" y="-747.32142857142856"/>
+            <point key="canvasLocation" x="3822" y="-747"/>
         </scene>
-        <!--Item-->
+        <!--User-->
         <scene sceneID="Uzg-tC-SUU">
             <objects>
-                <viewController id="cp6-zw-k3f" sceneMemberID="viewController">
+                <viewController id="cp6-zw-k3f" customClass="UserViewController" customModule="VT6002CEM_217110981_LiuPoHim_Assignment2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oBe-mv-Gaa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="paB-Xi-wf3">
+                                <rect key="frame" x="40" y="315" width="334" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTH-XI-xno">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sign Out">
+                                            <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tapLogoutButton:" destination="cp6-zw-k3f" eventType="touchUpInside" id="aZB-h7-BoW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Jwt-Qp-jgb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Jwt-Qp-jgb" firstAttribute="trailing" secondItem="paB-Xi-wf3" secondAttribute="trailing" constant="40" id="UfN-ze-ere"/>
+                            <constraint firstItem="paB-Xi-wf3" firstAttribute="leading" secondItem="Jwt-Qp-jgb" secondAttribute="leading" constant="40" id="bwp-aw-6KF"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="A13-JP-RbF"/>
+                    <tabBarItem key="tabBarItem" title="User" image="person.fill" catalog="system" selectedImage="person.fill" id="A13-JP-RbF"/>
                     <navigationItem key="navigationItem" id="jQA-BW-1sZ"/>
+                    <connections>
+                        <outlet property="logoutButton" destination="oTH-XI-xno" id="Avf-lU-qa2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BsA-wG-PoW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2129" y="-747"/>
+            <point key="canvasLocation" x="2903" y="-747"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ece-JB-iPg">
             <objects>
-                <viewController id="AV9-7E-POS" customClass="LoginViewController" customModule="VT6002CEM_217110981_LiuPoHim_Assignment2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AV9-7E-POS" customClass="LoginViewController" customModule="VT6002CEM_217110981_LiuPoHim_Assignment2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hrp-uH-asJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,19 +147,15 @@
                                                     <action selector="tapLoginButton:" destination="AV9-7E-POS" eventType="touchUpInside" id="Qw9-kv-xjL"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jz7-Uv-XO5">
-                                                <rect key="frame" x="284" y="0.0" width="50" height="50"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jz7-Uv-XO5">
+                                                <rect key="frame" x="284" y="0.5" width="50" height="48.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="kim-Dd-TCZ"/>
                                                 </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" buttonSize="mini">
-                                                    <backgroundConfiguration key="background" image="faceid" catalog="system">
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    </backgroundConfiguration>
-                                                </buttonConfiguration>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" backgroundImage="faceid" catalog="system"/>
                                                 <connections>
-                                                    <action selector="tapBiometricButton:" destination="AV9-7E-POS" eventType="touchUpInside" id="cYR-6n-FRX"/>
+                                                    <action selector="BiometricAuthentication:" destination="AV9-7E-POS" eventType="touchUpInside" id="nwf-VG-Z0j"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -270,13 +291,54 @@
         <!--Home Page View Controller-->
         <scene sceneID="VQd-cL-Dnj">
             <objects>
-                <viewController storyboardIdentifier="HomePageCV" id="kaV-9K-Any" customClass="HomePageViewController" customModule="VT6002CEM_217110981_LiuPoHim_Assignment2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomePageVC" id="kaV-9K-Any" customClass="HomePageViewController" customModule="VT6002CEM_217110981_LiuPoHim_Assignment2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nMY-Oo-oeg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gD3-PY-nrd">
+                                <rect key="frame" x="20" y="340.5" width="188" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Activities" backgroundImage="book" catalog="system">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapActivitiesButton:" destination="kaV-9K-Any" eventType="touchUpInside" id="JPQ-zF-6BM"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lEh-uT-eqV">
+                                <rect key="frame" x="132" y="136" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tq-rs-Ef7">
+                                <rect key="frame" x="204" y="352.5" width="190" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Bookmark" backgroundImage="star.circle" catalog="system">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapFavouritesButton:" destination="kaV-9K-Any" eventType="touchUpInside" id="ler-h0-kL6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqL-PU-gpG">
+                                <rect key="frame" x="319" y="23" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="person.circle" catalog="system"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tapIconButton:" destination="kaV-9K-Any" eventType="touchUpInside" id="L1n-pz-ReR"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GD9-Q1-pQu">
-                                <rect key="frame" x="113" y="523.5" width="188" height="114"/>
+                                <rect key="frame" x="90" y="551.5" width="235" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="27"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -285,39 +347,21 @@
                                     <color key="titleShadowColor" systemColor="systemBackgroundColor"/>
                                     <imageReference key="backgroundImage" image="map" catalog="system" symbolScale="default"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gD3-PY-nrd">
-                                <rect key="frame" x="113" y="372" width="188" height="116"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Course" backgroundImage="book" catalog="system">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
                                 <connections>
-                                    <segue destination="F82-qR-DfQ" kind="show" id="By4-23-u4u"/>
+                                    <action selector="tapLocationsButton:" destination="kaV-9K-Any" eventType="touchUpInside" id="XA4-sR-SmZ"/>
                                 </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lEh-uT-eqV">
-                                <rect key="frame" x="132" y="136" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tq-rs-Ef7">
-                                <rect key="frame" x="113" y="675" width="188" height="116"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Bookmark" backgroundImage="bookmark.fill" catalog="system">
-                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Mr-Dp-ZMx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="z6Q-Te-h6v"/>
+                    <connections>
+                        <outlet property="IconButton" destination="JqL-PU-gpG" id="Snt-Yd-lcw"/>
+                        <outlet property="activitiesButton" destination="gD3-PY-nrd" id="vyg-tb-wmo"/>
+                        <outlet property="favouritesButton" destination="2tq-rs-Ef7" id="sT3-BX-gVz"/>
+                        <outlet property="locationsButton" destination="GD9-Q1-pQu" id="K19-zt-rqO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvz-6m-w0K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -346,14 +390,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67q-tr-vNY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970" y="927"/>
+            <point key="canvasLocation" x="3822" y="927"/>
         </scene>
-        <!--Item-->
+        <!--Table View Controller-->
         <scene sceneID="o0D-Qf-p9j">
             <objects>
                 <tableViewController id="bbb-Vq-dXg" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="I06-Jc-LKN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -383,6 +427,9 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Show"/>
+                                            <connections>
+                                                <segue destination="k5X-ch-Gid" kind="show" id="710-Ko-AB9"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -393,16 +440,16 @@
                             <outlet property="delegate" destination="bbb-Vq-dXg" id="z0M-0R-lSQ"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="wer-Nh-hKY"/>
+                    <navigationItem key="navigationItem" id="cIQ-eE-T2t"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ewI-ts-5KS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2965" y="713"/>
+            <point key="canvasLocation" x="2902.898550724638" y="926.78571428571422"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PZu-U2-0jn">
             <objects>
-                <tabBarController id="F82-qR-DfQ" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="F82-qR-DfQ" customClass="TabBarController" customModule="VT6002CEM_217110981_LiuPoHim_Assignment2" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="tsX-sA-JP0"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="n5i-2X-xiR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -410,9 +457,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="cp6-zw-k3f" kind="relationship" relationship="viewControllers" id="cBM-4d-TiL"/>
                         <segue destination="egr-KZ-C5X" kind="relationship" relationship="viewControllers" id="ihm-24-ITD"/>
-                        <segue destination="bbb-Vq-dXg" kind="relationship" relationship="viewControllers" id="nnD-iN-wkF"/>
+                        <segue destination="Z5G-OS-ovW" kind="relationship" relationship="viewControllers" id="Ze3-ph-4yC"/>
+                        <segue destination="RBu-Vu-Z9m" kind="relationship" relationship="viewControllers" id="rhk-fJ-k5n"/>
+                        <segue destination="cp6-zw-k3f" kind="relationship" relationship="viewControllers" id="XAI-EE-YC4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="86p-uL-FWh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -424,7 +472,7 @@
             <objects>
                 <viewController id="egr-KZ-C5X" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WcP-t9-t2H">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xP-xG-Io4">
@@ -452,12 +500,12 @@
                         <viewLayoutGuide key="safeArea" id="g6G-Rl-gNZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="4bL-iR-ORQ"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="4bL-iR-ORQ"/>
                     <navigationItem key="navigationItem" title="Bookmarks" id="Ip7-2s-jb6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJt-BN-loe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3045" y="-348"/>
+            <point key="canvasLocation" x="2903" y="56"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="07E-bz-xTo">
@@ -476,15 +524,39 @@
             </objects>
             <point key="canvasLocation" x="-652" y="56"/>
         </scene>
+        <!--Locations-->
+        <scene sceneID="yrk-J5-1KA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RBu-Vu-Z9m" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Locations" image="location.fill" catalog="system" selectedImage="location.fill" id="wer-Nh-hKY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GdP-dB-zOQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bbb-Vq-dXg" kind="relationship" relationship="rootViewController" id="jVS-D8-3dD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ybh-zc-BoA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1992.753623188406" y="926.78571428571422"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="HAS-Wx-wkT"/>
         <segue reference="9yy-VW-gmb"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="book" catalog="system" width="128" height="99"/>
-        <image name="bookmark.fill" catalog="system" width="112" height="128"/>
+        <image name="character.book.closed" catalog="system" width="115" height="128"/>
         <image name="faceid" catalog="system" width="128" height="115"/>
+        <image name="location.fill" catalog="system" width="128" height="121"/>
         <image name="map" catalog="system" width="128" height="110"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="star.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -493,6 +565,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

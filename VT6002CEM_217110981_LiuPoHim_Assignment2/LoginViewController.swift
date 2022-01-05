@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseAuth
+import LocalAuthentication
+
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
@@ -22,6 +24,11 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         errorLabel.alpha = 0
         setStyle()
+        
+        if(Auth.auth().currentUser == nil){
+            biometricAuthButton.isEnabled = false
+            biometricAuthButton.alpha = 0.1
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -47,18 +54,18 @@ class LoginViewController: UIViewController {
                     self.showErrorMessage(message: error!.localizedDescription)
                 }
                 else{
-                    let HomePageViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomePageCV") as? HomePageViewController
-                    self.view.window?.rootViewController = HomePageViewController
-                    self.view.window?.makeKeyAndVisible()
+                    self.transferToHomePage()
                 }
             }
             
         }
     }
     
-    @IBAction func tapBiometricButton(_ sender: Any) {
+    private func transferToHomePage(){
+        let HomePageViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomePageVC") as? HomePageViewController
+        self.view.window?.rootViewController = HomePageViewController
+        self.view.window?.makeKeyAndVisible()
     }
-    
     
     func validateFields() -> String?{
         if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
@@ -78,6 +85,64 @@ class LoginViewController: UIViewController {
         errorLabel.text = message
         errorLabel.alpha = 1
         
+    }
+    
+    // MARK: - Biometric Authentication (from Biometric lab)
+    @IBAction func BiometricAuthentication(_ sender: Any) {
+        
+        let context = LAContext()
+        var error: NSError?
+        
+        if context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error){
+            context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Access requires authentication",
+                                   reply: {(success, error) in
+                                    DispatchQueue.main.async {
+                                        if let error = error {
+                                            switch error._code {
+                                            case LAError.Code.systemCancel.rawValue:
+                                                self.showNotifyMessage("Session cancelled",
+                                                           err: error.localizedDescription)
+                                            case LAError.Code.userCancel.rawValue:
+                                                self.showNotifyMessage("Please try again",
+                                                           err: error.localizedDescription)
+                                            case LAError.Code.userFallback.rawValue:
+                                                self.showNotifyMessage("Authentication",
+                                                           err: "Password option selected")
+                                            default:
+                                                self.showNotifyMessage("Authentication failed",
+                                                           err: error.localizedDescription)
+                                            }
+                                        } else{
+                                            self.transferToHomePage()
+                                        }
+                                    }
+                                   })
+            
+        } else{
+            if let error = error{
+                switch error.code {
+                case LAError.Code.biometryNotEnrolled.rawValue:
+                    showNotifyMessage("User is enrolled",
+                               err: error.localizedDescription)
+                case LAError.Code.passcodeNotSet.rawValue:
+                    showNotifyMessage("A passcode has not been set",
+                               err: error.localizedDescription)
+                case LAError.Code.biometryNotAvailable.rawValue:
+                    showNotifyMessage("Biometric authentication not available",
+                               err: error.localizedDescription)
+                default:
+                    showNotifyMessage("Unknown error",
+                               err: error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    func showNotifyMessage(_ msg: String, err: String?){
+        let alert = UIAlertController(title: msg, message: err, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
     /*

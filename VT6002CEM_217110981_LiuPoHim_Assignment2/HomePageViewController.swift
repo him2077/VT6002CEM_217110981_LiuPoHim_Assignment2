@@ -9,13 +9,41 @@ import UIKit
 
 class HomePageViewController: UIViewController {
 
+    @IBOutlet weak var activitiesButton: UIButton!
+    @IBOutlet weak var locationsButton: UIButton!
+    
+    @IBOutlet weak var favouritesButton: UIButton!
+    @IBOutlet weak var IconButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
+    @IBAction func tapActivitiesButton(_ sender: Any) {
+        let TabBarController = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+        TabBarController.selectedViewController = TabBarController.viewControllers?[1]
+        present(TabBarController, animated: true, completion: nil)
+    }
+    
+    @IBAction func tapFavouritesButton(_ sender: Any) {
+        let TabBarController = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+        TabBarController.selectedViewController = TabBarController.viewControllers?[0]
+        present(TabBarController, animated: true, completion: nil)
+    }
+    
+    @IBAction func tapLocationsButton(_ sender: Any) {
+        let TabBarController = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+        TabBarController.selectedViewController = TabBarController.viewControllers?[2]
+        present(TabBarController, animated: true, completion: nil)
+    }
+    
+    @IBAction func tapIconButton(_ sender: Any) {
+        let TabBarController = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+        TabBarController.selectedViewController = TabBarController.viewControllers?[3]
+        present(TabBarController, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

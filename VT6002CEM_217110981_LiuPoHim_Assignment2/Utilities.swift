@@ -19,7 +19,7 @@ class Utilities {
         }
         else{
             underLine = CALayer()
-            underLine.frame = CGRect(x: 0, y: textField.frame.height - 3, width: textField.frame.width, height: 3)
+            underLine.frame = CGRect(x: 0, y: textField.frame.height - 1, width: textField.frame.width, height: 2)
             
             underLine.backgroundColor = color.cgColor
             
@@ -40,5 +40,11 @@ class Utilities {
     static func CheckInputValid(_ Input: String) -> Bool{
         let limitation = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[A-Z])[A-Za-z\\d$@$#!%*?&]{8,}")
         return limitation.evaluate(with: Input)
+    }
+}
+
+extension UserDefaults {
+    static func IsExisit(forKey: String) -> Bool{
+        return UserDefaults.standard.object(forKey: forKey) != nil
     }
 }

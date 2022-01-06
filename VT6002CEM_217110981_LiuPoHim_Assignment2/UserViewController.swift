@@ -10,15 +10,34 @@ import FirebaseAuth
 
 class UserViewController: UIViewController {
 
+
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var changePasswordButton: UIButton!
+    @IBOutlet weak var autoLoginSwitch: UISwitch!
+    
+    var IsAutoLogin = false
+    let userDefaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Utilities.setButtonStyle(logoutButton)
+        Utilities.setButtonStyle(changePasswordButton)
+        
+        if UserDefaults.IsExisit(forKey: "IsAutoLogin"){
+            IsAutoLogin = userDefaults.bool(forKey: "IsAutoLogin")
+        } else {
+            userDefaults.setValue(IsAutoLogin, forKey: "IsAutoLogin")
+        }
+        autoLoginSwitch.setOn(IsAutoLogin, animated: false)
         
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func toggleAutoLoginSwitch(_ sender: Any) {
+        IsAutoLogin = autoLoginSwitch.isOn
+        userDefaults.setValue(IsAutoLogin, forKey: "IsAutoLogin")
+    }
+    
     @IBAction func tapLogoutButton(_ sender: Any) {
         do{
             try Auth.auth().signOut()

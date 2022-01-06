@@ -18,16 +18,39 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var biometricAuthButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var rememberSwitch: UISwitch!
     
     
+    private var IsRememberMe = false
+    let userDefaults = UserDefaults.standard
+    let user = Auth.auth().currentUser
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.alpha = 0
         setStyle()
         
-        if(Auth.auth().currentUser == nil){
+        
+        if UserDefaults.IsExisit(forKey: "IsRememberMe"){
+            IsRememberMe = userDefaults.bool(forKey: "IsRememberMe")
+        } else {
+            userDefaults.setValue(IsRememberMe, forKey: "IsRememberMe")
+        }
+        rememberSwitch.setOn(IsRememberMe, animated: false)
+        
+        if IsRememberMe{
+            emailTextField.text = userDefaults.string(forKey: "UserEmail")
+        }
+        
+        if user == nil{
             biometricAuthButton.isEnabled = false
             biometricAuthButton.alpha = 0.1
+        }
+        
+        if UserDefaults.IsExisit(forKey: "IsAutoLogin"){
+            let IsAutoLogin = userDefaults.bool(forKey: "IsAutoLogin")
+            if IsAutoLogin && user != nil {
+                transferToHomePage()
+            }
         }
         // Do any additional setup after loading the view.
     }
@@ -37,6 +60,11 @@ class LoginViewController: UIViewController {
         Utilities.setTextFieldStyle(emailTextField, color: newColor)
         Utilities.setTextFieldStyle(passwordTextField, color: newColor)
         Utilities.setButtonStyle(loginButton)
+    }
+    
+    @IBAction func toggleRemeberMe(_ sender: Any) {
+        IsRememberMe = rememberSwitch.isOn
+        userDefaults.setValue(IsRememberMe, forKey: "IsRememberMe")
     }
     
     @IBAction func tapLoginButton(_ sender: Any) {
@@ -65,6 +93,7 @@ class LoginViewController: UIViewController {
         let HomePageViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomePageVC") as? HomePageViewController
         self.view.window?.rootViewController = HomePageViewController
         self.view.window?.makeKeyAndVisible()
+        present(HomePageViewController!, animated: true, completion: nil)
     }
     
     func validateFields() -> String?{

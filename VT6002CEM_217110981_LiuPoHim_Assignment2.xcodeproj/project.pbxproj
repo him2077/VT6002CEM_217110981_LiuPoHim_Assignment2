@@ -23,6 +23,7 @@
 		9F4596B82784A81600EBF6A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4596B42784A81600EBF6A7 /* LoginViewController.swift */; };
 		9F4596BA2784A83A00EBF6A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4596B92784A83A00EBF6A7 /* Main.storyboard */; };
 		9F4596BC2784A92C00EBF6A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F4596BB2784A92B00EBF6A7 /* GoogleService-Info.plist */; };
+		9F9941F52787143000852DC8 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9941F42787143000852DC8 /* ChangePasswordViewController.swift */; };
 		9FABEA622785DC3100EFA84C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FABEA612785DC3100EFA84C /* TabBarController.swift */; };
 		9FABEA642785F5C800EFA84C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FABEA632785F5C800EFA84C /* UserViewController.swift */; };
 		B8DFE5C820C9D43118D3BC03 /* Pods_VT6002CEM_217110981_LiuPoHim_Assignment2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8FE7714EA4EEB277FF185B /* Pods_VT6002CEM_217110981_LiuPoHim_Assignment2.framework */; };
@@ -73,6 +74,7 @@
 		9F4596B42784A81600EBF6A7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9F4596B92784A83A00EBF6A7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9F4596BB2784A92B00EBF6A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9F9941F42787143000852DC8 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		9FABEA612785DC3100EFA84C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9FABEA632785F5C800EFA84C /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		AEDC81AC727D3A1D9A36A646 /* Pods-VT6002CEM_217110981_LiuPoHim_Assignment2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VT6002CEM_217110981_LiuPoHim_Assignment2Tests.debug.xcconfig"; path = "Target Support Files/Pods-VT6002CEM_217110981_LiuPoHim_Assignment2Tests/Pods-VT6002CEM_217110981_LiuPoHim_Assignment2Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				9F4596852784A5DD00EBF6A7 /* VT6002CEM_217110981_LiuPoHim_Assignment2.xcdatamodeld */,
 				9FABEA612785DC3100EFA84C /* TabBarController.swift */,
 				9FABEA632785F5C800EFA84C /* UserViewController.swift */,
+				9F9941F42787143000852DC8 /* ChangePasswordViewController.swift */,
 			);
 			path = VT6002CEM_217110981_LiuPoHim_Assignment2;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				9F4596872784A5DD00EBF6A7 /* VT6002CEM_217110981_LiuPoHim_Assignment2.xcdatamodeld in Sources */,
 				9F45967D2784A5DD00EBF6A7 /* AppDelegate.swift in Sources */,
 				9F4596B02784A7B300EBF6A7 /* HomePageViewController.swift in Sources */,
+				9F9941F52787143000852DC8 /* ChangePasswordViewController.swift in Sources */,
 				9F4596B72784A81600EBF6A7 /* Utilities.swift in Sources */,
 				9F45967F2784A5DD00EBF6A7 /* SceneDelegate.swift in Sources */,
 			);

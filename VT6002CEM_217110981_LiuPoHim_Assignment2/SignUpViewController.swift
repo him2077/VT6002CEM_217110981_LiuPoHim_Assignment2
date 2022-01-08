@@ -49,17 +49,15 @@ class SignUpViewController: UIViewController {
             Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
                 if let error = error{
                     
-                    self.showErrorMessage(message: "Error creating account")
+                    self.showErrorMessage(message: "Error creating account \(error.localizedDescription)")
                 }
                 else{
                     let db = Firestore.firestore()
-                    db.collection("user").addDocument(data: [
+                    db.collection("user").document("\(result!.user.uid)").setData([
                         "Nick Name": nickName,
                         "Building": true,
                         "Crafts": true,
                         "Food": true,
-                        "Music": true,
-                        "UID": result!.user.uid
                     ]) { (error) in
                         if error != nil{
                             self.showErrorMessage(message: "User data storing fail")

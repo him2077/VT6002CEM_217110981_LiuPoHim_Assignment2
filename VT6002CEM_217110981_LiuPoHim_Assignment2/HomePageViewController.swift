@@ -10,7 +10,7 @@ import UIKit
 class HomePageViewController: UIViewController {
 
     @IBOutlet weak var activitiesButton: UIButton!
-    @IBOutlet weak var locationsButton: UIButton!
+    @IBOutlet weak var craftsmanshipsButton: UIButton!
     
     @IBOutlet weak var favouritesButton: UIButton!
     @IBOutlet weak var IconButton: UIButton!
@@ -32,7 +32,7 @@ class HomePageViewController: UIViewController {
         present(TabBarController, animated: true, completion: nil)
     }
     
-    @IBAction func tapLocationsButton(_ sender: Any) {
+    @IBAction func tapCraftsmanshipButton(_ sender: Any) {
         let TabBarController = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
         TabBarController.selectedViewController = TabBarController.viewControllers?[2]
         present(TabBarController, animated: true, completion: nil)

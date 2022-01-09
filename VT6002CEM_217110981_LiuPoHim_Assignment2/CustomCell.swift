@@ -22,6 +22,9 @@ class CustomCell: UITableViewCell {
         super.awakeFromNib()
         
     }
+    
+    
+    
     func checkIsFavorite(){
         let favouriteRef = db.collection("user").document(Auth.auth().currentUser!.uid).collection("Favorites").document(title.text ?? "")
         favouriteRef.getDocument { snapshot, error in
@@ -42,6 +45,7 @@ class CustomCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     @IBAction func toggleFavorite(_ sender: Any) {
         if !IsFavorite{
             db.collection("user").document(Auth.auth().currentUser!.uid).collection("Favorites").document("\(title.text ?? "")").setData([

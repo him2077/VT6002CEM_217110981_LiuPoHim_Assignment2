@@ -21,7 +21,6 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
     var cellSpacing : CGFloat = 20
     var selectedRow : String = "All"
     
-    
     // MARK: - get data from firestore
     func getData(){
         
@@ -112,6 +111,8 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
         cell.checkIsFavorite()
         return cell
     }
+        
+    
     
     // MARK: - main
     @IBOutlet weak var tableView: UITableView!
@@ -133,6 +134,17 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
         //tableView.rowHeight = 200
         tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DetailViewController {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let section = indexPath.section
+                destination.titleContent = self.selectedList[section].title
+                destination.introductionContent = self.selectedList[section].introduction
+                destination.detailContent = self.selectedList[section].detail
+            }
+        }
     }
     
     // MARK: - picker view setting

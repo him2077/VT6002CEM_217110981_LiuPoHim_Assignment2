@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9F3EB6DC278AE73900CA4DBC /* craftsmanship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EB6DB278AE73900CA4DBC /* craftsmanship.swift */; };
+		9F3EB6DF278B257800CA4DBC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3EB6DE278B257800CA4DBC /* DetailViewController.swift */; };
 		9F45967D2784A5DD00EBF6A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45967C2784A5DD00EBF6A7 /* AppDelegate.swift */; };
 		9F45967F2784A5DD00EBF6A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45967E2784A5DD00EBF6A7 /* SceneDelegate.swift */; };
 		9F4596812784A5DD00EBF6A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4596802784A5DD00EBF6A7 /* ViewController.swift */; };
@@ -58,6 +59,7 @@
 		8C27FC5917B08F16597259B8 /* Pods_VT6002CEM_217110981_LiuPoHim_Assignment2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VT6002CEM_217110981_LiuPoHim_Assignment2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0365FAD08E565EDDE49CA2 /* Pods-VT6002CEM_217110981_LiuPoHim_Assignment2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VT6002CEM_217110981_LiuPoHim_Assignment2.release.xcconfig"; path = "Target Support Files/Pods-VT6002CEM_217110981_LiuPoHim_Assignment2/Pods-VT6002CEM_217110981_LiuPoHim_Assignment2.release.xcconfig"; sourceTree = "<group>"; };
 		9F3EB6DB278AE73900CA4DBC /* craftsmanship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = craftsmanship.swift; sourceTree = "<group>"; };
+		9F3EB6DE278B257800CA4DBC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9F4596792784A5DD00EBF6A7 /* VT6002CEM_217110981_LiuPoHim_Assignment2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VT6002CEM_217110981_LiuPoHim_Assignment2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F45967C2784A5DD00EBF6A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F45967E2784A5DD00EBF6A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				9FABEA632785F5C800EFA84C /* UserViewController.swift */,
 				9F9941F42787143000852DC8 /* ChangePasswordViewController.swift */,
 				9F6500772789DFA300A3F598 /* TraditionalCraftsmanshipViewController.swift */,
+				9F3EB6DE278B257800CA4DBC /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				9FABEA622785DC3100EFA84C /* TabBarController.swift in Sources */,
 				9F4596812784A5DD00EBF6A7 /* ViewController.swift in Sources */,
 				9F4596872784A5DD00EBF6A7 /* VT6002CEM_217110981_LiuPoHim_Assignment2.xcdatamodeld in Sources */,
+				9F3EB6DF278B257800CA4DBC /* DetailViewController.swift in Sources */,
 				9F6500782789DFA300A3F598 /* TraditionalCraftsmanshipViewController.swift in Sources */,
 				9F45967D2784A5DD00EBF6A7 /* AppDelegate.swift in Sources */,
 				9F3EB6DC278AE73900CA4DBC /* craftsmanship.swift in Sources */,

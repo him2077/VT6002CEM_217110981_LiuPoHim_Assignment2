@@ -72,34 +72,58 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="craftsmanshipCell" rowHeight="125" id="tym-DK-sfV" customClass="CustomCell" customModule="VT6002CEM_217110981_LiuPoHim_Assignment2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="125"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="craftsmanshipCell" rowHeight="254" id="tym-DK-sfV" customClass="CustomCell" customModule="VT6002CEM_217110981_LiuPoHim_Assignment2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="254"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tym-DK-sfV" id="KiF-cg-yiB">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="254"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Introduction" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WV3-7o-9sQ">
-                                                    <rect key="frame" x="10" y="81" width="394" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Introduction" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WV3-7o-9sQ">
+                                                    <rect key="frame" x="10" y="115" width="394" height="119"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qp8-zy-WfK">
-                                                    <rect key="frame" x="10" y="20" width="394" height="51"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qp8-zy-WfK">
+                                                    <rect key="frame" x="10" y="20" width="316" height="75"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="75" id="BKx-DE-lWj"/>
+                                                    </constraints>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Title">
+                                                            <attributes>
+                                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                <font key="NSFont" size="30" name=".SFNS-Regular"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wat-fo-dv5">
+                                                    <rect key="frame" x="334" y="19.5" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="7qL-er-uqo"/>
+                                                        <constraint firstAttribute="width" constant="50" id="Bem-9e-qqp"/>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="systemYellowColor"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal">
+                                                        <imageReference key="backgroundImage" image="star" catalog="system" symbolScale="medium"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="WV3-7o-9sQ" firstAttribute="leading" secondItem="KiF-cg-yiB" secondAttribute="leading" constant="10" id="9w2-Cx-trF"/>
-                                                <constraint firstItem="qp8-zy-WfK" firstAttribute="leading" secondItem="KiF-cg-yiB" secondAttribute="leading" constant="10" id="Ekc-mC-YJ7"/>
-                                                <constraint firstItem="WV3-7o-9sQ" firstAttribute="top" secondItem="qp8-zy-WfK" secondAttribute="bottom" constant="10" id="P7P-TC-GWp"/>
-                                                <constraint firstAttribute="bottom" secondItem="WV3-7o-9sQ" secondAttribute="bottom" constant="20" id="Q9g-fM-lLZ"/>
-                                                <constraint firstAttribute="trailing" secondItem="qp8-zy-WfK" secondAttribute="trailing" constant="10" id="lHc-Iy-Uea"/>
-                                                <constraint firstItem="qp8-zy-WfK" firstAttribute="top" secondItem="KiF-cg-yiB" secondAttribute="top" constant="20" id="lTU-a9-8Eo"/>
-                                                <constraint firstAttribute="trailing" secondItem="WV3-7o-9sQ" secondAttribute="trailing" constant="10" id="sAW-0r-yVz"/>
+                                                <constraint firstAttribute="trailing" secondItem="WV3-7o-9sQ" secondAttribute="trailing" constant="10" id="Ofa-z3-dEp"/>
+                                                <constraint firstItem="Wat-fo-dv5" firstAttribute="leading" secondItem="qp8-zy-WfK" secondAttribute="trailing" constant="8" id="WQz-BT-xSf"/>
+                                                <constraint firstItem="qp8-zy-WfK" firstAttribute="leading" secondItem="WV3-7o-9sQ" secondAttribute="leading" id="Zsh-cO-UGt"/>
+                                                <constraint firstAttribute="bottom" secondItem="WV3-7o-9sQ" secondAttribute="bottom" constant="20" id="eEY-2V-Ty8"/>
+                                                <constraint firstItem="qp8-zy-WfK" firstAttribute="leading" secondItem="KiF-cg-yiB" secondAttribute="leadingMargin" constant="-10" id="gBA-aq-dgV"/>
+                                                <constraint firstItem="qp8-zy-WfK" firstAttribute="top" secondItem="KiF-cg-yiB" secondAttribute="top" constant="20" id="iFZ-KU-BaV"/>
+                                                <constraint firstItem="WV3-7o-9sQ" firstAttribute="top" secondItem="qp8-zy-WfK" secondAttribute="bottom" constant="20" id="lz5-Dw-dYN"/>
+                                                <constraint firstItem="qp8-zy-WfK" firstAttribute="top" secondItem="Wat-fo-dv5" secondAttribute="top" id="wO1-aH-4hR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Wat-fo-dv5" secondAttribute="trailing" constant="10" id="y04-KF-UqZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -574,13 +598,27 @@
                                         <fragment content="Traditional Craftsmanship">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" metaFont="system" size="29"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <font key="NSFont" size="20" name=".SFNS-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
                                     <imageReference key="backgroundImage" image="book" catalog="system" symbolScale="default"/>
                                 </state>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <imageReference key="image" image="book" catalog="system" symbolScale="default"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Traditional Craftsmanship">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="30" name=".SFNS-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="tapCraftsmanshipButton:" destination="kaV-9K-Any" eventType="touchUpInside" id="d5N-s2-pX0"/>
                                 </connections>
@@ -746,6 +784,7 @@
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

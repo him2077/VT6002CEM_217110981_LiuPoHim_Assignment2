@@ -109,7 +109,7 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
         cell.title?.text = self.selectedList[indexPath.section].title
         cell.introduction?.text = self.selectedList[indexPath.section].introduction
         cell.detail? = self.selectedList[indexPath.section].detail
-
+        cell.checkIsFavorite()
         return cell
     }
     

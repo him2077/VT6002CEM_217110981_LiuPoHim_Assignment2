@@ -94,7 +94,7 @@
                                                         <fragment content="Title">
                                                             <attributes>
                                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                                <font key="NSFont" size="30" name=".SFNS-Regular"/>
+                                                                <font key="NSFont" size="30" name="TimesNewRomanPS-BoldMT"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -112,6 +112,9 @@
                                                     <state key="normal">
                                                         <imageReference key="backgroundImage" image="star" catalog="system" symbolScale="medium"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="toggleFavorite:" destination="tym-DK-sfV" eventType="touchUpInside" id="UlC-wZ-8pG"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -127,6 +130,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="favoriteButton" destination="Wat-fo-dv5" id="I8B-at-hvI"/>
                                             <outlet property="introduction" destination="WV3-7o-9sQ" id="aQO-jk-4fd"/>
                                             <outlet property="title" destination="qp8-zy-WfK" id="tEU-Er-0V5"/>
                                         </connections>
@@ -598,7 +602,7 @@
                                         <fragment content="Traditional Craftsmanship">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" size="20" name=".SFNS-Regular"/>
+                                                <font key="NSFont" metaFont="system" size="20"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -613,7 +617,7 @@
                                         <fragment content="Traditional Craftsmanship">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" size="30" name=".SFNS-Regular"/>
+                                                <font key="NSFont" metaFont="system" size="30"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>

@@ -12,3 +12,5 @@ struct craftsmanship{
     var introduction: String
     var detail : String
 }
+
+

@@ -12,7 +12,6 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
     
     let category = ["All", "Building", "Crafts", "Food"]
     
-    let test: [String] = ["test1", "test2", "test3"]
     var buildingList = [craftsmanship]()
     var craftsList = [craftsmanship]()
     var foodList = [craftsmanship]()
@@ -30,7 +29,7 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
         
         categoryRef.collection("Building").getDocuments { snapshot, error in
             if error != nil {
-                
+                print("\(error!.localizedDescription)")
             }
             else {
                 if let snapshot = snapshot{
@@ -45,7 +44,7 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
         }
         categoryRef.collection("Crafts").getDocuments { snapshot, error in
             if error != nil {
-                
+                print("\(error!.localizedDescription)")
             }
             else {
                 if let snapshot = snapshot{
@@ -60,7 +59,7 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
         }
         categoryRef.collection("Food").getDocuments { snapshot, error in
             if error != nil {
-                
+                print("\(error!.localizedDescription)")
             }
             else {
                 if let snapshot = snapshot{
@@ -108,7 +107,7 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
 
         cell.title?.text = self.selectedList[indexPath.section].title
         cell.introduction?.text = "Introduction: \n" + self.selectedList[indexPath.section].introduction
-        cell.detail = "Detail: \n" + self.selectedList[indexPath.section].detail
+        cell.detailContent = "Detail: \n" + self.selectedList[indexPath.section].detail
         cell.checkIsFavorite()
         return cell
     }

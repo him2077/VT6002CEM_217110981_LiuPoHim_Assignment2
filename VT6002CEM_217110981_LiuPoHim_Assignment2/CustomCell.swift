@@ -13,7 +13,8 @@ class CustomCell: UITableViewCell {
     let db = Firestore.firestore()
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var introduction: UILabel!
-    var detail : String = ""
+    var detailContent : String = ""
+    var introductionContent: String = ""
     @IBOutlet weak var favoriteButton: UIButton!
     
     var IsFavorite = false
@@ -51,7 +52,7 @@ class CustomCell: UITableViewCell {
             db.collection("user").document(Auth.auth().currentUser!.uid).collection("Favorites").document("\(title.text ?? "")").setData([
                 "Title" : title.text ?? "",
                 "Introduction" : introduction.text ?? "",
-                "Detail" : detail
+                "Detail" : detailContent
             ], completion: { (error) in
                     if error != nil{
                         print("User data storing fail: \(error!.localizedDescription)")

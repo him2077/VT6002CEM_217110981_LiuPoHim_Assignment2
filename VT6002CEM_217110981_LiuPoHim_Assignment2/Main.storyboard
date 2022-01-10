@@ -820,7 +820,6 @@
         <!--Craftsmanship-->
         <scene sceneID="MYV-iW-glP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j5Y-Yv-TOS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xgv-Bg-bvD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Craftsmanship" image="book" catalog="system" id="beP-Kg-pN5"/>
                     <toolbarItems/>
@@ -833,6 +832,7 @@
                         <segue destination="CJP-Pu-WZw" kind="relationship" relationship="rootViewController" id="H60-Zf-eYr"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j5Y-Yv-TOS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3412" y="56"/>
         </scene>

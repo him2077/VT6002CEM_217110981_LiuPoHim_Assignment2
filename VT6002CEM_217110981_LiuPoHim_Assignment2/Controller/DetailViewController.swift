@@ -17,9 +17,9 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var favouriteButton: UIButton!
     
-    var titleContent: String?
-    var introductionContent: String?
-    var detailContent: String?
+    var titleContent: String = ""
+    var introductionContent: String = ""
+    var detailContent: String = ""
     var IsFavorite = false
     let db = Firestore.firestore()
     
@@ -32,13 +32,13 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         titleLabel.text = titleContent
-        introductionLabel.text = introductionContent
-        detailLabel.text = detailContent
+        introductionLabel.text = "Introduction: \n" + introductionContent
+        detailLabel.text = "Detail \n" + detailContent
         checkIsFavorite()
     }
     
     func checkIsFavorite(){
-        let favouriteRef = db.collection("user").document(Auth.auth().currentUser!.uid).collection("Favorites").document(titleContent ?? "")
+        let favouriteRef = db.collection("user").document(Auth.auth().currentUser!.uid).collection("Favorites").document(titleContent)
         favouriteRef.getDocument { snapshot, error in
             if snapshot!.exists{
                 self.IsFavorite = true
@@ -53,10 +53,10 @@ class DetailViewController: UIViewController {
     
     @IBAction func toggleFavoriteButton(_ sender: Any) {
         if !IsFavorite{
-            db.collection("user").document(Auth.auth().currentUser!.uid).collection("Favorites").document("\(titleContent ?? "")").setData([
-                "Title" : titleContent ?? "",
-                "Introduction" : introductionContent ?? "",
-                "Detail" : detailContent ?? ""
+            db.collection("user").document(Auth.auth().currentUser!.uid).collection("Favorites").document("\(titleContent)").setData([
+                "Title" : titleContent,
+                "Introduction" : introductionContent,
+                "Detail" : detailContent
             ], completion: { (error) in
                     if error != nil{
                         print("User data storing fail: \(error!.localizedDescription)")
@@ -66,7 +66,7 @@ class DetailViewController: UIViewController {
             self.favouriteButton.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
         }
         else{
-            db.collection("user").document(Auth.auth().currentUser!.uid).collection("Favorites").document("\(titleContent ?? "DF1")").delete()
+            db.collection("user").document(Auth.auth().currentUser!.uid).collection("Favorites").document("\(titleContent)").delete()
             IsFavorite = false
             self.favouriteButton.setBackgroundImage(UIImage(systemName: "star"), for: .normal)
         }

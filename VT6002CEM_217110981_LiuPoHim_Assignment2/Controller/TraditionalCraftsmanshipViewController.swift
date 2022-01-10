@@ -21,8 +21,9 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
     var cellSpacing : CGFloat = 20
     var selectedRow : String = "All"
     
+    
     // MARK: - get data from firestore
-    func getData(){
+    func getData(completed: @escaping () -> Void){
         
         let db = Firestore.firestore()
         let categoryRef = db.collection("Traditional Craftsmanship").document("Category")
@@ -70,11 +71,11 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
                     })
                     self.allList += self.foodList
                 }
+                self.selectedList = self.allList
+                completed()
             }
         }
-        selectedList = allList
-        tableView.reloadData()
-        
+
     }
     
     
@@ -106,8 +107,8 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
         cell.clipsToBounds = true
 
         cell.title?.text = self.selectedList[indexPath.section].title
-        cell.introduction?.text = self.selectedList[indexPath.section].introduction
-        cell.detail? = self.selectedList[indexPath.section].detail
+        cell.introduction?.text = "Introduction: \n" + self.selectedList[indexPath.section].introduction
+        cell.detail = "Detail: \n" + self.selectedList[indexPath.section].detail
         cell.checkIsFavorite()
         return cell
     }
@@ -117,13 +118,10 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
     // MARK: - main
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var pickerView: UIPickerView!
-    
-    
-    
-    
+
+       
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
         
         //tableView.register(CustomCell.self, forCellReuseIdentifier: "craftsmanshipCell")
         pickerView.delegate = self
@@ -133,7 +131,9 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
         tableView.estimatedRowHeight = 200;
         //tableView.rowHeight = 200
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.reloadData()
+        getData{ () -> () in
+            self.tableView.reloadData()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

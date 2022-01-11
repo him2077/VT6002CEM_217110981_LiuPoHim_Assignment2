@@ -7,10 +7,13 @@
 
 import Foundation
 
-struct craftsmanship{
+struct dataStructure{
     var title : String
     var introduction: String
     var detail : String
+    var location : String
+    var latitude : Double
+    var longitude : Double
 }
 
 

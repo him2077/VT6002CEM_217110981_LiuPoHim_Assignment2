@@ -15,6 +15,9 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var introduction: UILabel!
     var detailContent : String = ""
     var introductionContent: String = ""
+    var locationContent = ""
+    var latitude : Double = 0
+    var longitude : Double = 0
     @IBOutlet weak var favoriteButton: UIButton!
     
     var IsFavorite = false
@@ -43,21 +46,36 @@ class CustomCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
     @IBAction func toggleFavorite(_ sender: Any) {
         if !IsFavorite{
-            db.collection("user").document(Auth.auth().currentUser!.uid).collection("Favorites").document("\(title.text ?? "")").setData([
-                "Title" : title.text ?? "",
-                "Introduction" : introduction.text ?? "",
-                "Detail" : detailContent
-            ], completion: { (error) in
-                    if error != nil{
-                        print("User data storing fail: \(error!.localizedDescription)")
-                    }
-            })
+            if(locationContent == ""){
+                db.collection("user").document(Auth.auth().currentUser!.uid).collection("Favorites").document("\(title.text ?? "")").setData([
+                    "Title" : title.text ?? "",
+                    "Introduction" : introduction.text ?? "",
+                    "Detail" : detailContent
+                ], completion: { (error) in
+                        if error != nil{
+                            print("User data storing fail: \(error!.localizedDescription)")
+                        }
+                })
+            }
+            else{
+                db.collection("user").document(Auth.auth().currentUser!.uid).collection("Favorites").document("\(title.text ?? "")").setData([
+                    "Title" : title.text ?? "",
+                    "Introduction" : introduction.text ?? "",
+                    "Detail" : detailContent,
+                    "Location" : locationContent,
+                    "Latitude" : latitude,
+                    "Longitude" : longitude
+                ], completion: { (error) in
+                        if error != nil{
+                            print("User data storing fail: \(error!.localizedDescription)")
+                        }
+                })
+            }
             IsFavorite = true
             self.favoriteButton.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
         }

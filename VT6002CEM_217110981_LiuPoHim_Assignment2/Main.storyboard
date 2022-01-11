@@ -709,7 +709,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Introduction" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNb-qf-8xH">
                                                     <rect key="frame" x="10" y="115" width="394" height="119"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -761,7 +761,7 @@
                                             <outlet property="favoriteButton" destination="zoB-uK-W1Y" id="V1R-dW-NMG"/>
                                             <outlet property="introduction" destination="SNb-qf-8xH" id="hZH-bQ-Fkt"/>
                                             <outlet property="title" destination="tQO-Ek-M38" id="eFO-kr-3c4"/>
-                                            <segue destination="G4s-aD-7RW" kind="showDetail" trigger="accessoryAction" id="c8a-cy-cOu"/>
+                                            <segue destination="G4s-aD-7RW" kind="showDetail" identifier="showActivitiesDetail" id="3np-OS-kp0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -790,19 +790,37 @@
             <objects>
                 <viewController id="k5X-ch-Gid" customClass="LocationViewController" customModule="VT6002CEM_217110981_LiuPoHim_Assignment2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Zq-py-NZN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cve-X2-3I7">
-                                <rect key="frame" x="0.0" y="88" width="421" height="662"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cve-X2-3I7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEw-Zc-6R9">
+                                <rect key="frame" x="20" y="20" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <imageReference key="image" image="arrowshape.turn.up.backward.fill" catalog="system" symbolScale="large"/>
+                                    <color key="baseBackgroundColor" systemColor="systemBlueColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tapBackButton:" destination="k5X-ch-Gid" eventType="touchUpInside" id="Bmq-fe-BX3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Mgl-FV-uHJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cve-X2-3I7" firstAttribute="leading" secondItem="Mgl-FV-uHJ" secondAttribute="leading" id="YKT-Bj-mEl"/>
+                            <constraint firstItem="cve-X2-3I7" firstAttribute="top" secondItem="Mgl-FV-uHJ" secondAttribute="top" id="hfj-WV-e1h"/>
+                            <constraint firstItem="Mgl-FV-uHJ" firstAttribute="bottom" secondItem="cve-X2-3I7" secondAttribute="bottom" id="hgD-22-oN1"/>
+                            <constraint firstAttribute="trailing" secondItem="cve-X2-3I7" secondAttribute="trailing" id="z0O-dz-X74"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Location" id="ohW-km-ghO"/>
                     <connections>
+                        <outlet property="backButton" destination="GEw-Zc-6R9" id="hdV-bM-GGl"/>
                         <outlet property="mapView" destination="cve-X2-3I7" id="XC3-9v-e3C"/>
                     </connections>
                 </viewController>
@@ -884,19 +902,19 @@
             </objects>
             <point key="canvasLocation" x="3412" y="56"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Activities Detail View Controller-->
         <scene sceneID="ZV2-lp-hN5">
             <objects>
-                <viewController modalPresentationStyle="pageSheet" id="G4s-aD-7RW" customClass="DetailViewController" customModule="VT6002CEM_217110981_LiuPoHim_Assignment2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="pageSheet" id="G4s-aD-7RW" customClass="ActivitiesDetailViewController" customModule="VT6002CEM_217110981_LiuPoHim_Assignment2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZLk-yg-8cu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFT-Pe-gFp">
-                                <rect key="frame" x="0.0" y="80" width="414" height="666"/>
+                                <rect key="frame" x="0.0" y="80" width="414" height="728"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xcn-YA-q1a">
-                                        <rect key="frame" x="15" y="0.0" width="384" height="124"/>
+                                        <rect key="frame" x="15" y="0.0" width="384" height="121.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kx4-fa-vDb">
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="36"/>
@@ -908,13 +926,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="introductionLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1x4-wi-xnC">
-                                                <rect key="frame" x="0.0" y="56" width="384" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="56" width="384" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="detailLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UH3-Zf-DGa">
-                                                <rect key="frame" x="0.0" y="100" width="384" height="24"/>
+                                                <rect key="frame" x="0.0" y="97.5" width="384" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -951,27 +969,33 @@
                                     <imageReference key="backgroundImage" image="star" catalog="system" symbolScale="medium"/>
                                 </state>
                                 <connections>
-                                    <action selector="toggleFavoriteButton:" destination="G4s-aD-7RW" eventType="touchUpInside" id="gQF-ga-cRE"/>
+                                    <action selector="toggleFavoriteButton:" destination="G4s-aD-7RW" eventType="touchUpInside" id="2bw-W3-bRy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dul-ae-VAL">
-                                <rect key="frame" x="100" y="756" width="214" height="44"/>
+                                <rect key="frame" x="20" y="23" width="214" height="44"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Location">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseBackgroundColor" systemColor="systemBlueColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="k5X-ch-Gid" kind="show" id="esy-yo-jCD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g4X-rC-DOZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dul-ae-VAL" firstAttribute="top" secondItem="vFT-Pe-gFp" secondAttribute="bottom" constant="10" id="4C6-SX-ObB"/>
+                            <constraint firstItem="dul-ae-VAL" firstAttribute="top" secondItem="g4X-rC-DOZ" secondAttribute="top" constant="23" id="8Vk-vg-cGk"/>
                             <constraint firstItem="vFT-Pe-gFp" firstAttribute="leading" secondItem="g4X-rC-DOZ" secondAttribute="leading" id="93e-DU-ySW"/>
-                            <constraint firstItem="dul-ae-VAL" firstAttribute="leading" secondItem="g4X-rC-DOZ" secondAttribute="leading" constant="100" id="BvN-gA-hDe"/>
+                            <constraint firstItem="dul-ae-VAL" firstAttribute="leading" secondItem="g4X-rC-DOZ" secondAttribute="leading" constant="20" id="BvN-gA-hDe"/>
                             <constraint firstItem="vFT-Pe-gFp" firstAttribute="top" secondItem="1Sv-dD-97j" secondAttribute="bottom" constant="10" id="HSn-LL-1N7"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="vFT-Pe-gFp" secondAttribute="bottom" constant="62" id="Vqw-tE-YXo"/>
-                            <constraint firstItem="g4X-rC-DOZ" firstAttribute="bottom" secondItem="dul-ae-VAL" secondAttribute="bottom" constant="8" id="cJB-qo-ckV"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="vFT-Pe-gFp" secondAttribute="bottom" id="Vqw-tE-YXo"/>
+                            <constraint firstItem="dul-ae-VAL" firstAttribute="centerY" secondItem="1Sv-dD-97j" secondAttribute="centerY" id="dcR-fl-t3g"/>
                             <constraint firstItem="vFT-Pe-gFp" firstAttribute="centerX" secondItem="ZLk-yg-8cu" secondAttribute="centerX" id="pko-5h-73K"/>
                             <constraint firstItem="1Sv-dD-97j" firstAttribute="top" secondItem="g4X-rC-DOZ" secondAttribute="top" constant="20" id="rNq-W4-z8n"/>
-                            <constraint firstItem="g4X-rC-DOZ" firstAttribute="trailing" secondItem="dul-ae-VAL" secondAttribute="trailing" constant="100" id="tng-CQ-QpK"/>
+                            <constraint firstItem="g4X-rC-DOZ" firstAttribute="trailing" secondItem="dul-ae-VAL" secondAttribute="trailing" constant="180" id="tng-CQ-QpK"/>
                             <constraint firstItem="1Sv-dD-97j" firstAttribute="trailing" secondItem="ZLk-yg-8cu" secondAttribute="trailingMargin" id="wyZ-YK-y1g"/>
                         </constraints>
                     </view>
@@ -979,6 +1003,7 @@
                         <outlet property="detailLabel" destination="UH3-Zf-DGa" id="2ho-Zg-BaB"/>
                         <outlet property="favouriteButton" destination="1Sv-dD-97j" id="Lxv-RP-uMu"/>
                         <outlet property="introductionLabel" destination="1x4-wi-xnC" id="DAf-fT-F8k"/>
+                        <outlet property="locationButton" destination="dul-ae-VAL" id="1Ui-RT-rdf"/>
                         <outlet property="titleLabel" destination="Kx4-fa-vDb" id="piI-dw-TeT"/>
                     </connections>
                 </viewController>
@@ -991,6 +1016,7 @@
         <segue reference="9yy-VW-gmb"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
         <image name="book" catalog="system" width="128" height="99"/>
         <image name="faceid" catalog="system" width="128" height="115"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>

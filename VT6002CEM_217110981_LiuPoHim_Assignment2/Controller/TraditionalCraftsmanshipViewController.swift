@@ -12,11 +12,11 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
     
     let category = ["All", "Building", "Crafts", "Food"]
     
-    var buildingList = [craftsmanship]()
-    var craftsList = [craftsmanship]()
-    var foodList = [craftsmanship]()
-    var allList = [craftsmanship]()
-    var selectedList = [craftsmanship]()
+    var buildingList = [dataStructure]()
+    var craftsList = [dataStructure]()
+    var foodList = [dataStructure]()
+    var allList = [dataStructure]()
+    var selectedList = [dataStructure]()
     var cellSpacing : CGFloat = 20
     var selectedRow : String = "All"
     
@@ -34,9 +34,12 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
             else {
                 if let snapshot = snapshot{
                     self.buildingList = snapshot.documents.map({ doc in
-                        return craftsmanship(title: doc["Title"] as? String ?? "",
+                        return dataStructure(title: doc["Title"] as? String ?? "",
                                              introduction: doc["Introduction"] as? String ?? "",
-                                             detail: doc["Detail"] as? String ?? "")
+                                             detail: doc["Detail"] as? String ?? "",
+                                             location: doc["Location"] as? String ?? "",
+                                             latitude: doc["Latitude"] as? Double ?? 0,
+                                             longitude: doc["Longitude"] as? Double ?? 0)
                     })
                     self.allList += self.buildingList
                 }
@@ -49,9 +52,12 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
             else {
                 if let snapshot = snapshot{
                     self.craftsList = snapshot.documents.map({ doc in
-                        return craftsmanship(title: doc["Title"] as? String ?? "",
+                        return dataStructure(title: doc["Title"] as? String ?? "",
                                              introduction: doc["Introduction"] as? String ?? "",
-                                             detail: doc["Detail"] as? String ?? "")
+                                             detail: doc["Detail"] as? String ?? "",
+                                             location: doc["Location"] as? String ?? "",
+                                             latitude: doc["Latitude"] as? Double ?? 0,
+                                             longitude: doc["Longitude"] as? Double ?? 0)
                     })
                     self.allList += self.craftsList
                 }
@@ -64,9 +70,12 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
             else {
                 if let snapshot = snapshot{
                     self.foodList = snapshot.documents.map({ doc in
-                        return craftsmanship(title: doc["Title"] as? String ?? "",
+                        return dataStructure(title: doc["Title"] as? String ?? "",
                                              introduction: doc["Introduction"] as? String ?? "",
-                                             detail: doc["Detail"] as? String ?? "")
+                                             detail: doc["Detail"] as? String ?? "",
+                                             location: doc["Location"] as? String ?? "",
+                                             latitude: doc["Latitude"] as? Double ?? 0,
+                                             longitude: doc["Longitude"] as? Double ?? 0)
                     })
                     self.allList += self.foodList
                 }
@@ -106,8 +115,8 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
         cell.clipsToBounds = true
 
         cell.title?.text = self.selectedList[indexPath.section].title
-        cell.introduction?.text = "Introduction: \n" + self.selectedList[indexPath.section].introduction
-        cell.detailContent = "Detail: \n" + self.selectedList[indexPath.section].detail
+        cell.introduction?.text = "Introduction: \n" + self.selectedList[indexPath.section].introduction.replacingOccurrences(of: "\\n", with: "\n")
+        cell.detailContent = "Detail: \n" + self.selectedList[indexPath.section].detail.replacingOccurrences(of: "\\n", with: "\n")
         cell.checkIsFavorite()
         return cell
     }
@@ -140,8 +149,8 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let section = indexPath.section
                 destination.titleContent = self.selectedList[section].title
-                destination.introductionContent = self.selectedList[section].introduction
-                destination.detailContent = self.selectedList[section].detail
+                destination.introductionContent = self.selectedList[section].introduction.replacingOccurrences(of: "\\n", with: "\n")
+                destination.detailContent = self.selectedList[section].detail.replacingOccurrences(of: "\\n", with: "\n")
             }
         }
     }

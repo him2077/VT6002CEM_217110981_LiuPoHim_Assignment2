@@ -11,7 +11,7 @@ import Firebase
 class ActivitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var activitiesList = [craftsmanship]()
+    var activitiesList = [dataStructure]()
     var cellSpacing : CGFloat = 20
     
     override func viewDidLoad() {
@@ -27,12 +27,16 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? DetailViewController {
+        if let destination = segue.destination as? ActivitiesDetailViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let section = indexPath.section
                 destination.titleContent = self.activitiesList[section].title
-                destination.introductionContent = self.activitiesList[section].introduction
-                destination.detailContent = self.activitiesList[section].detail
+                destination.introductionContent = self.activitiesList[section].introduction.replacingOccurrences(of: "\\n", with: "\n") + "\nVenue:\n" + self.activitiesList[section].location.replacingOccurrences(of: "\\n", with: "\n")
+                destination.detailContent = self.activitiesList[section].detail.replacingOccurrences(of: "\\n", with: "\n")
+                destination.locationContent = self.activitiesList[section].location.replacingOccurrences(of: "\\n", with: "\n")
+                destination.latitude = self.activitiesList[section].latitude
+                destination.longitude = self.activitiesList[section].longitude
+                
             }
         }
     }
@@ -51,9 +55,12 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate, UITableVi
             else {
                 if let snapshot = snapshot{
                     self.activitiesList = snapshot.documents.map({ doc in
-                        return craftsmanship(title: doc["Title"] as? String ?? "",
+                        return dataStructure(title: doc["Title"] as? String ?? "",
                                              introduction: doc["Introduction"] as? String ?? "",
-                                             detail: doc["Detail"] as? String ?? "")
+                                             detail: doc["Detail"] as? String ?? "",
+                                             location: doc["Location"] as? String ?? "",
+                                             latitude: doc["Latitude"] as? Double ?? 0,
+                                             longitude: doc["Longitude"] as? Double ?? 0)
                     })
                 }
                 completed()
@@ -90,8 +97,11 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.clipsToBounds = true
 
         cell.title?.text = self.activitiesList[indexPath.section].title
-        cell.introduction?.text = "Introduction: \n" + self.activitiesList[indexPath.section].introduction
-        cell.detailContent = "Detail: \n" + self.activitiesList[indexPath.section].detail
+        cell.introduction?.text = "Introduction: \n" + self.activitiesList[indexPath.section].introduction.replacingOccurrences(of: "\\n", with: "\n") + "\nVenue:\n" + self.activitiesList[indexPath.section].location.replacingOccurrences(of: "\\n", with: "\n")
+        cell.detailContent = "Detail: \n" + self.activitiesList[indexPath.section].detail.replacingOccurrences(of: "\\n", with: "\n")
+        cell.locationContent = self.activitiesList[indexPath.section].location.replacingOccurrences(of: "\\n", with: "\n")
+        cell.latitude = self.activitiesList[indexPath.section].latitude
+        cell.longitude = self.activitiesList[indexPath.section].longitude
         cell.checkIsFavorite()
         return cell
     }

@@ -11,7 +11,8 @@ import CoreLocation
 
 class LocationViewController: UIViewController {
 
-    
+    var location : Location?
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     
     struct Location {
@@ -19,25 +20,25 @@ class LocationViewController: UIViewController {
         let latitude : Double
         let longitude : Double
     }
-    let shopList = [
-        Location(title: "testlocation", latitude: 22.30, longitude: 114.177),
-        Location(title: "testlocation2", latitude: 22.20, longitude: 114.170)
-    ]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Utilities.setButtonStyle(backButton, cornerRadius: 40.0)
         
-        for shop in shopList{
-            let annotation = MKPointAnnotation();
-            annotation.title = shop.title
-            annotation.coordinate = CLLocationCoordinate2D(latitude: shop.latitude, longitude: shop.longitude)
-            mapView.addAnnotation(annotation)
-            mapView.showAnnotations([annotation], animated: true)
-        }
+        let annotation = MKPointAnnotation();
+        annotation.title = location?.title
+        annotation.coordinate = CLLocationCoordinate2D(latitude: location!.latitude, longitude: location!.longitude)
+        mapView.addAnnotation(annotation)
+        mapView.showAnnotations([annotation], animated: true)
+        
         
     }
     
-
+    @IBAction func tapBackButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

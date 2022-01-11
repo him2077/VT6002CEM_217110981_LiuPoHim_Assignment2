@@ -54,7 +54,7 @@ class CustomCell: UITableViewCell {
             if(locationContent == ""){
                 db.collection("user").document(Auth.auth().currentUser!.uid).collection("Favorites").document("\(title.text ?? "")").setData([
                     "Title" : title.text ?? "",
-                    "Introduction" : introduction.text ?? "",
+                    "Introduction" : introductionContent,
                     "Detail" : detailContent
                 ], completion: { (error) in
                         if error != nil{
@@ -65,7 +65,7 @@ class CustomCell: UITableViewCell {
             else{
                 db.collection("user").document(Auth.auth().currentUser!.uid).collection("Favorites").document("\(title.text ?? "")").setData([
                     "Title" : title.text ?? "",
-                    "Introduction" : introduction.text ?? "",
+                    "Introduction" : introductionContent,
                     "Detail" : detailContent,
                     "Location" : locationContent,
                     "Latitude" : latitude,

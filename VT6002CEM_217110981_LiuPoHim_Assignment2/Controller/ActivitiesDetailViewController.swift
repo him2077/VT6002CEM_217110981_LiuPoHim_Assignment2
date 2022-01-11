@@ -36,8 +36,8 @@ class ActivitiesDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         titleLabel.text = titleContent
-        introductionLabel.text = "Introduction: \n" + introductionContent
-        detailLabel.text = "Detail \n" + detailContent
+        introductionLabel.text = introductionContent.replacingOccurrences(of: "\\n", with: "\n") + "\nVenue:\n" + locationContent.replacingOccurrences(of: "\\n", with: "\n")
+        detailLabel.text = "Detail \n" + detailContent.replacingOccurrences(of: "\\n", with: "\n")
         checkIsFavorite()
     }
     

@@ -116,7 +116,8 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
 
         cell.title?.text = self.selectedList[indexPath.section].title
         cell.introduction?.text = "Introduction: \n" + self.selectedList[indexPath.section].introduction.replacingOccurrences(of: "\\n", with: "\n")
-        cell.detailContent = "Detail: \n" + self.selectedList[indexPath.section].detail.replacingOccurrences(of: "\\n", with: "\n")
+        cell.introductionContent = self.selectedList[indexPath.section].introduction
+        cell.detailContent = self.selectedList[indexPath.section].detail
         cell.checkIsFavorite()
         return cell
     }
@@ -149,8 +150,8 @@ class TraditionalCraftsmanshipViewController: UIViewController, UITableViewDeleg
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let section = indexPath.section
                 destination.titleContent = self.selectedList[section].title
-                destination.introductionContent = self.selectedList[section].introduction.replacingOccurrences(of: "\\n", with: "\n")
-                destination.detailContent = self.selectedList[section].detail.replacingOccurrences(of: "\\n", with: "\n")
+                destination.introductionContent = self.selectedList[section].introduction
+                destination.detailContent = self.selectedList[section].detail
             }
         }
     }

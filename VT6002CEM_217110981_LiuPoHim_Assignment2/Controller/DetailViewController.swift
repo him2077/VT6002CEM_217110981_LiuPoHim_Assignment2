@@ -32,8 +32,8 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         titleLabel.text = titleContent
-        introductionLabel.text = "Introduction: \n" + introductionContent
-        detailLabel.text = "Detail \n" + detailContent
+        introductionLabel.text = "Introduction: \n" + introductionContent.replacingOccurrences(of: "\\n", with: "\n")
+        detailLabel.text = "Detail \n" + detailContent.replacingOccurrences(of: "\\n", with: "\n")
         checkIsFavorite()
     }
     

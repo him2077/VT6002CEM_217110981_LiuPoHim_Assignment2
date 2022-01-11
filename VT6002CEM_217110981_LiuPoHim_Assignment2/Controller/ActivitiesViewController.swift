@@ -31,9 +31,9 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate, UITableVi
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let section = indexPath.section
                 destination.titleContent = self.activitiesList[section].title
-                destination.introductionContent = self.activitiesList[section].introduction.replacingOccurrences(of: "\\n", with: "\n") + "\nVenue:\n" + self.activitiesList[section].location.replacingOccurrences(of: "\\n", with: "\n")
-                destination.detailContent = self.activitiesList[section].detail.replacingOccurrences(of: "\\n", with: "\n")
-                destination.locationContent = self.activitiesList[section].location.replacingOccurrences(of: "\\n", with: "\n")
+                destination.introductionContent = self.activitiesList[section].introduction
+                destination.detailContent = self.activitiesList[section].detail
+                destination.locationContent = self.activitiesList[section].location
                 destination.latitude = self.activitiesList[section].latitude
                 destination.longitude = self.activitiesList[section].longitude
                 
@@ -98,8 +98,9 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate, UITableVi
 
         cell.title?.text = self.activitiesList[indexPath.section].title
         cell.introduction?.text = "Introduction: \n" + self.activitiesList[indexPath.section].introduction.replacingOccurrences(of: "\\n", with: "\n") + "\nVenue:\n" + self.activitiesList[indexPath.section].location.replacingOccurrences(of: "\\n", with: "\n")
-        cell.detailContent = "Detail: \n" + self.activitiesList[indexPath.section].detail.replacingOccurrences(of: "\\n", with: "\n")
-        cell.locationContent = self.activitiesList[indexPath.section].location.replacingOccurrences(of: "\\n", with: "\n")
+        cell.introductionContent = self.activitiesList[indexPath.section].introduction
+        cell.detailContent = self.activitiesList[indexPath.section].detail
+        cell.locationContent = self.activitiesList[indexPath.section].location
         cell.latitude = self.activitiesList[indexPath.section].latitude
         cell.longitude = self.activitiesList[indexPath.section].longitude
         cell.checkIsFavorite()

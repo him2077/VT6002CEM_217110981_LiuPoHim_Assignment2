@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="CJP-Pu-WZw" customClass="TraditionalCraftsmanshipViewController" customModule="VT6002CEM_217110981_LiuPoHim_Assignment2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kjE-Ea-wqP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HUJ-CL-1TG">
-                                <rect key="frame" x="0.0" y="120" width="414" height="688"/>
+                                <rect key="frame" x="0.0" y="208" width="414" height="605"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -214,7 +214,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="paB-Xi-wf3">
-                                <rect key="frame" x="40" y="314" width="334" height="142"/>
+                                <rect key="frame" x="40" y="314" width="334" height="141"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjO-ic-8fL">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="31"/>
@@ -235,23 +235,25 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQr-is-LOG">
                                         <rect key="frame" x="0.0" y="51" width="334" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="eg6-df-Nq4"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Change Password">
-                                            <color key="baseBackgroundColor" systemColor="systemBlueColor"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Change Password">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <segue destination="eqc-gi-dbu" kind="presentation" id="rDH-8a-4Km"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTH-XI-xno">
-                                        <rect key="frame" x="0.0" y="111" width="334" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Logout">
-                                            <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
-                                        </buttonConfiguration>
+                                        <rect key="frame" x="0.0" y="111" width="334" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="tapLogoutButton:" destination="cp6-zw-k3f" eventType="touchUpInside" id="aZB-h7-BoW"/>
                                         </connections>
@@ -291,7 +293,7 @@
                                 <rect key="frame" x="20" y="144" width="374" height="393"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yrE-6j-4YI">
-                                        <rect key="frame" x="30" y="30" width="314" height="352.5"/>
+                                        <rect key="frame" x="30" y="30" width="314" height="350.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Q5-w4-fuw">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
@@ -325,24 +327,26 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFD-Xv-g56">
                                                 <rect key="frame" x="0.0" y="250.5" width="314" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="ovx-aT-3yE"/>
                                                 </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Change Password">
-                                                    <color key="baseBackgroundColor" systemColor="systemBlueColor"/>
-                                                </buttonConfiguration>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Change Password">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="tapChangePasswordButton:" destination="eqc-gi-dbu" eventType="touchUpInside" id="3m1-w3-Y9u"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfd-pJ-NsU">
-                                                <rect key="frame" x="0.0" y="320.5" width="314" height="32"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Cancel">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
-                                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
-                                                </buttonConfiguration>
+                                                <rect key="frame" x="0.0" y="320.5" width="314" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="tapCancelButton:" destination="eqc-gi-dbu" eventType="touchUpInside" id="pgc-rO-8QS"/>
                                                 </connections>
@@ -387,11 +391,11 @@
             <objects>
                 <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AV9-7E-POS" customClass="LoginViewController" customModule="VT6002CEM_217110981_LiuPoHim_Assignment2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hrp-uH-asJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Kbz-TN-W6j">
-                                <rect key="frame" x="40" y="244" width="334" height="332.5"/>
+                                <rect key="frame" x="40" y="200" width="334" height="332.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5f8-Y4-2t1">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -434,14 +438,15 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aO-TQ-sf6">
                                                 <rect key="frame" x="0.0" y="0.0" width="274" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="ksi-um-ZHC"/>
                                                 </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Login" buttonSize="large">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="21"/>
-                                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
-                                                </buttonConfiguration>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Login">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="tapLoginButton:" destination="AV9-7E-POS" eventType="touchUpInside" id="Qw9-kv-xjL"/>
                                                 </connections>
@@ -504,11 +509,11 @@
             <objects>
                 <viewController id="QyV-d8-JIR" customClass="SignUpViewController" customModule="VT6002CEM_217110981_LiuPoHim_Assignment2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JDt-yl-uNb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="k3I-lK-W8i">
-                                <rect key="frame" x="40" y="204" width="334" height="350.5"/>
+                                <rect key="frame" x="40" y="160" width="334" height="350.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nick Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="54u-Yy-VKW">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -536,14 +541,15 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuP-hb-z04">
                                         <rect key="frame" x="0.0" y="249.5" width="334" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="L0G-t9-hOZ"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Sign Up" buttonSize="large">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="21"/>
-                                            <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
-                                        </buttonConfiguration>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="tapSignUpButton:" destination="QyV-d8-JIR" eventType="touchUpInside" id="nWX-68-mKS"/>
                                         </connections>
@@ -696,7 +702,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Xic-u6-yqh">
-                                <rect key="frame" x="0.0" y="69" width="414" height="744"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -771,7 +777,7 @@
                         <color key="backgroundColor" red="0.70642201829999995" green="0.93883792050000003" blue="0.37003058100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Xic-u6-yqh" firstAttribute="leading" secondItem="ycp-L5-g8F" secondAttribute="leading" id="FRQ-q4-KgV"/>
-                            <constraint firstItem="Xic-u6-yqh" firstAttribute="top" secondItem="ycp-L5-g8F" secondAttribute="top" constant="25" id="enK-e2-T7K"/>
+                            <constraint firstItem="Xic-u6-yqh" firstAttribute="top" secondItem="ycp-L5-g8F" secondAttribute="top" id="enK-e2-T7K"/>
                             <constraint firstItem="ycp-L5-g8F" firstAttribute="bottom" secondItem="Xic-u6-yqh" secondAttribute="bottom" id="i6c-Ji-O7n"/>
                             <constraint firstItem="Xic-u6-yqh" firstAttribute="trailing" secondItem="ycp-L5-g8F" secondAttribute="trailing" id="zTD-tA-5lJ"/>
                         </constraints>
@@ -799,10 +805,12 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEw-Zc-6R9">
                                 <rect key="frame" x="20" y="20" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="arrowshape.turn.up.backward.fill" catalog="system">
-                                    <color key="baseBackgroundColor" systemColor="systemBlueColor"/>
-                                </buttonConfiguration>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="arrowshape.turn.up.backward.fill" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="tapBackButton:" destination="k5X-ch-Gid" eventType="touchUpInside" id="Bmq-fe-BX3"/>
                                 </connections>
@@ -857,7 +865,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Nal-Nw-ptu">
-                                <rect key="frame" x="0.0" y="70" width="414" height="743"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -930,7 +938,7 @@
                         <viewLayoutGuide key="safeArea" id="g6G-Rl-gNZ"/>
                         <color key="backgroundColor" red="0.70642201829999995" green="0.93883792050000003" blue="0.37003058100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Nal-Nw-ptu" firstAttribute="top" secondItem="WcP-t9-t2H" secondAttribute="top" constant="70" id="6Lt-if-QHg"/>
+                            <constraint firstItem="Nal-Nw-ptu" firstAttribute="top" secondItem="WcP-t9-t2H" secondAttribute="top" id="6Lt-if-QHg"/>
                             <constraint firstItem="Nal-Nw-ptu" firstAttribute="leading" secondItem="WcP-t9-t2H" secondAttribute="leading" id="Zbr-uH-XPn"/>
                             <constraint firstItem="g6G-Rl-gNZ" firstAttribute="bottom" secondItem="Nal-Nw-ptu" secondAttribute="bottom" id="sBY-Rf-vcj"/>
                             <constraint firstItem="g6G-Rl-gNZ" firstAttribute="trailing" secondItem="Nal-Nw-ptu" secondAttribute="trailing" id="z3Z-80-N8c"/>
@@ -939,8 +947,8 @@
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="4bL-iR-ORQ"/>
                     <connections>
                         <outlet property="tableView" destination="Nal-Nw-ptu" id="EnR-SM-fs8"/>
-                        <segue destination="CJP-Pu-WZw" kind="showDetail" identifier="showDetail" id="YR4-aC-iHV"/>
                         <segue destination="G4s-aD-7RW" kind="showDetail" identifier="showActivitiesDetail" id="K7a-JJ-rE1"/>
+                        <segue destination="KpZ-dW-B1e" kind="showDetail" identifier="showDetail" id="7st-zu-6WD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJt-BN-loe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1055,11 +1063,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dul-ae-VAL">
                                 <rect key="frame" x="20" y="23" width="214" height="44"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Location">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                    <color key="baseBackgroundColor" systemColor="systemBlueColor"/>
-                                </buttonConfiguration>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Location">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="k5X-ch-Gid" kind="show" id="esy-yo-jCD"/>
                                 </connections>
@@ -1095,9 +1104,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="K7a-JJ-rE1"/>
-        <segue reference="UMf-lV-sfj"/>
-        <segue reference="YR4-aC-iHV"/>
+        <segue reference="3np-OS-kp0"/>
+        <segue reference="9yy-VW-gmb"/>
+        <segue reference="7st-zu-6WD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>

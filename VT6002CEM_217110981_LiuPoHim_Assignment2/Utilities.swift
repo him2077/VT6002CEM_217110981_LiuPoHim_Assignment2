@@ -31,7 +31,7 @@ class Utilities {
         
     }
     
-    static func setButtonStyle(_ button: UIButton, cornerRadius : Double = 25.0){
+    static func setButtonStyle(_ button: UIButton, cornerRadius : CGFloat = 25.0){
         
         button.layer.cornerRadius = cornerRadius
         button.tintColor = UIColor.white

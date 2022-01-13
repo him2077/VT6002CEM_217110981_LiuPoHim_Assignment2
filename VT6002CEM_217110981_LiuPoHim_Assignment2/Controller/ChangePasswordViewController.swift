@@ -48,34 +48,52 @@ class ChangePasswordViewController: UIViewController {
             showErrorMessage(message: error!)
         }
         else{
-            let email = Auth.auth().currentUser?.email
+            let email = (Auth.auth().currentUser?.email)!
             let oldPassword = oldPasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let newPassword = newPasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            let credential = EmailAuthProvider.credential(withEmail: email!, password: oldPassword)
-                        
-            Auth.auth().currentUser?.reauthenticate(with: credential, completion: { (result, error) in
-                if error != nil{
+            reauthenticate(email: email, password: oldPassword, completed: { (result, error) in
+                if error != nil{ //reauthenticate fail
                     self.showErrorMessage(message: error!.localizedDescription)
                 }
-                else {
-                    Auth.auth().currentUser?.updatePassword(to: newPassword, completion: { error in
-                        if error != nil{
-                            self.showErrorMessage(message: error!.localizedDescription)
-                        }
-                        else{
-                            let alert = UIAlertController(title: nil, message: "Password changed successfully", preferredStyle: .alert)
-                            self.present(alert, animated: true, completion: nil)
-                            self.goBack()
-                        }
-                    })
+                else { //reauthenticate successful
+                    if result{
+                        self.changePassword(newPassword: newPassword)
+                    }
                 }
             })
             
             
         }
     }
+    func reauthenticate(email: String, password: String, completed: @escaping (_ Result:Bool, _ Error:NSError?) -> Void){
+        let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+                    
+        Auth.auth().currentUser?.reauthenticate(with: credential, completion: { (result, error) in
+            if error != nil{
+                completed(false, error! as NSError)
+            }
+            else {
+                completed(true, nil)
+            }
+        })
+    }
     
+    func changePassword(newPassword: String){
+        Auth.auth().currentUser?.updatePassword(to: newPassword, completion: { error in
+            if error != nil{
+                self.showErrorMessage(message: error!.localizedDescription)
+            }
+            else{
+                let alert = UIAlertController(title: nil, message: "Password changed successfully", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
+                    self.goBack()
+                }
+                alert.addAction(ok)
+                self.present(alert, animated: true, completion: nil)
+            }
+        })
+    }
     
     func validateFields() -> String?{
         if oldPasswordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {

@@ -42,7 +42,7 @@ class SignUpViewController: UIViewController {
     }
 
     @IBAction func tapSignUpButton(_ sender: Any) {
-        let error = validateFields()
+        let error = validateFields(nickName: nickNameTextField.text!, email: emailTextField.text!, password:  passwordTextField.text!)
         if error != nil{
             showErrorMessage(message: error!)
         }
@@ -77,7 +77,7 @@ class SignUpViewController: UIViewController {
                     "Nick Name": nickName
                 ]) { (error) in
                     if error != nil{
-                        self.showErrorMessage(message: "User data storing fail" + error!.localizedDescription)
+                        completed(true, error as NSError?)
                     }
                     completed(true, nil)
                 }
@@ -85,22 +85,22 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    func validateFields() -> String?{
-        if nickNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+    func validateFields(nickName: String, email: String, password: String) -> String?{
+        if nickName.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             Utilities.setTextFieldStyle(passwordTextField, color: UIColor.red)
             return "Please fill in all fields"
         }
-        if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+        if email.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             Utilities.setTextFieldStyle(emailTextField, color: UIColor.red)
             return "Please fill in all fields"
         }
-        if passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+        if password.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             Utilities.setTextFieldStyle(passwordTextField, color: UIColor.red)
             return "Please fill in all fields"
         }
         
-        let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        if Utilities.CheckInputValid(password) == false {
+        let clearPassword = password.trimmingCharacters(in: .whitespacesAndNewlines)
+        if Utilities.CheckInputValid(clearPassword) == false {
             Utilities.setTextFieldStyle(passwordTextField, color: UIColor.red)
             return "Please make sure your password at least 8 characters, contain a UPPERCASE letter and a lowercase letter"
         }

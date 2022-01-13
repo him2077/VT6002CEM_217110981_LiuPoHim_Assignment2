@@ -33,6 +33,8 @@
 		9FABEA642785F5C800EFA84C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FABEA632785F5C800EFA84C /* UserViewController.swift */; };
 		9FAFF68A278D75F7005E40D6 /* ActivitiesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF689278D75F7005E40D6 /* ActivitiesDetailViewController.swift */; };
 		9FAFF68C278DC208005E40D6 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFF68B278DC208005E40D6 /* FavoritesViewController.swift */; };
+		9FCB7CFC27907CBB008C0015 /* LoginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCB7CFB27907CBB008C0015 /* LoginTest.swift */; };
+		9FCB7CFE279088D9008C0015 /* SignUpTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCB7CFD279088D9008C0015 /* SignUpTest.swift */; };
 		B8DFE5C820C9D43118D3BC03 /* Pods_VT6002CEM_217110981_LiuPoHim_Assignment2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8FE7714EA4EEB277FF185B /* Pods_VT6002CEM_217110981_LiuPoHim_Assignment2.framework */; };
 		DFE22735984D71CA1B9D2352 /* Pods_VT6002CEM_217110981_LiuPoHim_Assignment2_VT6002CEM_217110981_LiuPoHim_Assignment2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F9055DE9C3E9EF6007D0DE /* Pods_VT6002CEM_217110981_LiuPoHim_Assignment2_VT6002CEM_217110981_LiuPoHim_Assignment2UITests.framework */; };
 		FB76154CEA0DA831A2AB0C34 /* Pods_VT6002CEM_217110981_LiuPoHim_Assignment2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C27FC5917B08F16597259B8 /* Pods_VT6002CEM_217110981_LiuPoHim_Assignment2Tests.framework */; };
@@ -91,6 +93,8 @@
 		9FABEA632785F5C800EFA84C /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		9FAFF689278D75F7005E40D6 /* ActivitiesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesDetailViewController.swift; sourceTree = "<group>"; };
 		9FAFF68B278DC208005E40D6 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		9FCB7CFB27907CBB008C0015 /* LoginTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTest.swift; sourceTree = "<group>"; };
+		9FCB7CFD279088D9008C0015 /* SignUpTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTest.swift; sourceTree = "<group>"; };
 		AEDC81AC727D3A1D9A36A646 /* Pods-VT6002CEM_217110981_LiuPoHim_Assignment2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VT6002CEM_217110981_LiuPoHim_Assignment2Tests.debug.xcconfig"; path = "Target Support Files/Pods-VT6002CEM_217110981_LiuPoHim_Assignment2Tests/Pods-VT6002CEM_217110981_LiuPoHim_Assignment2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC8FE7714EA4EEB277FF185B /* Pods_VT6002CEM_217110981_LiuPoHim_Assignment2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VT6002CEM_217110981_LiuPoHim_Assignment2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E492C62654DD582F8BD65640 /* Pods-VT6002CEM_217110981_LiuPoHim_Assignment2-VT6002CEM_217110981_LiuPoHim_Assignment2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VT6002CEM_217110981_LiuPoHim_Assignment2-VT6002CEM_217110981_LiuPoHim_Assignment2UITests.release.xcconfig"; path = "Target Support Files/Pods-VT6002CEM_217110981_LiuPoHim_Assignment2-VT6002CEM_217110981_LiuPoHim_Assignment2UITests/Pods-VT6002CEM_217110981_LiuPoHim_Assignment2-VT6002CEM_217110981_LiuPoHim_Assignment2UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 		9F4596952784A5DF00EBF6A7 /* VT6002CEM_217110981_LiuPoHim_Assignment2Tests */ = {
 			isa = PBXGroup;
 			children = (
+				9FCB7CFD279088D9008C0015 /* SignUpTest.swift */,
+				9FCB7CFB27907CBB008C0015 /* LoginTest.swift */,
 				9F4596962784A5DF00EBF6A7 /* VT6002CEM_217110981_LiuPoHim_Assignment2Tests.swift */,
 			);
 			path = VT6002CEM_217110981_LiuPoHim_Assignment2Tests;
@@ -493,6 +499,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F4596972784A5DF00EBF6A7 /* VT6002CEM_217110981_LiuPoHim_Assignment2Tests.swift in Sources */,
+				9FCB7CFC27907CBB008C0015 /* LoginTest.swift in Sources */,
+				9FCB7CFE279088D9008C0015 /* SignUpTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

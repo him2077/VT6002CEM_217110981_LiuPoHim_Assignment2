@@ -69,7 +69,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func tapLoginButton(_ sender: Any) {
         
-        let error = validateFields()
+        let error = validateFields(email: emailTextField.text!, password:  passwordTextField.text!)
         if error != nil{
             showErrorMessage(message: error!)
         }
@@ -111,12 +111,12 @@ class LoginViewController: UIViewController {
         present(HomePageViewController!, animated: true, completion: nil)
     }
     
-    func validateFields() -> String?{
-        if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+    func validateFields(email: String, password: String) -> String?{
+        if email.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             Utilities.setTextFieldStyle(emailTextField, color: UIColor.red)
             return "Please fill in all fields"
         }
-        if passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+        if password.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             Utilities.setTextFieldStyle(passwordTextField, color: UIColor.red)
             return "Please fill in all fields"
         }

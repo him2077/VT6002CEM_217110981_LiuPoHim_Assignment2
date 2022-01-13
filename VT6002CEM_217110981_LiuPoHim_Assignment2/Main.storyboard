@@ -413,7 +413,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5g7-U8-Wrk">
                                         <rect key="frame" x="0.0" y="70" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBQ-JO-ZRR">
                                         <rect key="frame" x="0.0" y="140" width="334" height="31"/>
@@ -1109,6 +1109,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="HAS-Wx-wkT"/>
         <segue reference="3np-OS-kp0"/>
         <segue reference="9yy-VW-gmb"/>
         <segue reference="7st-zu-6WD"/>

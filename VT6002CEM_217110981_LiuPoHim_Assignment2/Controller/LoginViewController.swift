@@ -24,11 +24,11 @@ class LoginViewController: UIViewController {
     private var IsRememberMe = false
     let userDefaults = UserDefaults.standard
     let user = Auth.auth().currentUser
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.alpha = 0
         setStyle()
-        
         
         if UserDefaults.IsExisit(forKey: "IsRememberMe"){
             IsRememberMe = userDefaults.bool(forKey: "IsRememberMe")
@@ -83,6 +83,9 @@ class LoginViewController: UIViewController {
                 }
                 else{
                     if result {
+                        if(self.IsRememberMe){
+                            self.userDefaults.setValue(email, forKey: "UserEmail")
+                        }
                         self.transferToHomePage()
                     }
                 }

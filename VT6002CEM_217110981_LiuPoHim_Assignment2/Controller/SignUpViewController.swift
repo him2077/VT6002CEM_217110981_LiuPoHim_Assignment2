@@ -21,10 +21,15 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     
+    let userDefaults = UserDefaults.standard
+    var IsRememberMe : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.alpha = 0
         setStyle()
+        
+        IsRememberMe = userDefaults.bool(forKey: "IsRememberMe")
         // Do any additional setup after loading the view.
     }
     
@@ -46,31 +51,39 @@ class SignUpViewController: UIViewController {
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            signUp(email: email, password: password, nickName: nickName, completed: { (result, error) in
                 if let error = error{
                     
-                    self.showErrorMessage(message: "Error creating account \(error.localizedDescription)")
+                    self.showErrorMessage(message: "\(error.localizedDescription)")
                 }
                 else{
-                    let db = Firestore.firestore()
-                    db.collection("user").document("\(result!.user.uid)").setData([
-                        "Nick Name": nickName,
-                        "Building": true,
-                        "Crafts": true,
-                        "Food": true,
-                    ]) { (error) in
-                        if error != nil{
-                            self.showErrorMessage(message: "User data storing fail")
-                        }
+                    if(self.IsRememberMe){
+                        self.userDefaults.setValue(email, forKey: "UserEmail")
                     }
-                    self.login();
-                    
+                    self.login();                    
+                }
+            })
+        }
+    }
+    
+    func signUp(email: String, password: String, nickName: String, completed: @escaping (_ Result:Bool, _ Error:NSError?) -> Void){
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            if let error = error{
+                completed(false, error as NSError)
+            }
+            else{
+                let db = Firestore.firestore()
+                db.collection("user").document("\(result!.user.uid)").setData([
+                    "Nick Name": nickName
+                ]) { (error) in
+                    if error != nil{
+                        self.showErrorMessage(message: "User data storing fail" + error!.localizedDescription)
+                    }
+                    completed(true, nil)
                 }
             }
         }
-        
     }
-    
     
     func validateFields() -> String?{
         if nickNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
@@ -104,7 +117,7 @@ class SignUpViewController: UIViewController {
     
     func login(){
         
-        let HomePageViewController = storyboard?.instantiateViewController(withIdentifier: "HomePageCV") as? HomePageViewController
+        let HomePageViewController = storyboard?.instantiateViewController(withIdentifier: "HomePageVC") as? HomePageViewController
         view.window?.rootViewController = HomePageViewController
         view.window?.makeKeyAndVisible()
     }

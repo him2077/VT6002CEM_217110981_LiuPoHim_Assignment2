@@ -15,6 +15,11 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     var favoritesList = [dataStructure]()
     var cellSpacing : CGFloat = 20
     
+    override func viewWillAppear(_ animated: Bool) {
+        getData{ () -> () in
+            self.tableView.reloadData()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

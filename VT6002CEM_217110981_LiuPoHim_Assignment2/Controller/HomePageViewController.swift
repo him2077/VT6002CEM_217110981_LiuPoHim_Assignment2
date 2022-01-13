@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class HomePageViewController: UIViewController {
 
@@ -14,10 +16,29 @@ class HomePageViewController: UIViewController {
     
     @IBOutlet weak var favouritesButton: UIButton!
     @IBOutlet weak var IconButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        welcomeAlert()
+    }
+    
+    func welcomeAlert(){
+        let db = Firestore.firestore()
+        let userRef = db.collection("user").document(Auth.auth().currentUser!.uid)
+        var nickName : String?
+        
+        userRef.getDocument { document, error in
+            if let document = document, document.exists{
+                let docData = document.data()
+                nickName = docData!["Nick Name"] as? String ?? ""
+                let alert = UIAlertController(title: nil, message: "Welcome \(nickName!)!", preferredStyle: .alert)
+                let start = UIAlertAction(title: "Start", style: .default)
+                alert.addAction(start)
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
 
     @IBAction func tapActivitiesButton(_ sender: Any) {

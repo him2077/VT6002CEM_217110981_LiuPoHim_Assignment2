@@ -77,15 +77,27 @@ class LoginViewController: UIViewController {
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            login(email: email, password: password){ (result,error) in
                 if error != nil{
                     self.showErrorMessage(message: error!.localizedDescription)
                 }
                 else{
-                    self.transferToHomePage()
+                    if result {
+                        self.transferToHomePage()
+                    }
                 }
             }
-            
+        }
+    }
+    
+    func login(email: String, password: String, completed: @escaping (_ Result:Bool, _ Error:NSError?) -> Void){
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if error != nil{
+                completed(false, error! as NSError)
+            }
+            else{
+                completed(true, nil)
+            }
         }
     }
     

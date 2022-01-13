@@ -16,6 +16,7 @@ class ChangePasswordViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     
     @IBOutlet weak var changePasswordButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class ChangePasswordViewController: UIViewController {
         Utilities.setTextFieldStyle(newPasswordTextField, color: newColor)
         Utilities.setTextFieldStyle(confirmPasswordTextField, color: newColor)
         Utilities.setButtonStyle(changePasswordButton)
+        Utilities.setButtonStyle(cancelButton, cornerRadius: 15)
     }
     
     @IBAction func tapCancelButton(_ sender: Any) {

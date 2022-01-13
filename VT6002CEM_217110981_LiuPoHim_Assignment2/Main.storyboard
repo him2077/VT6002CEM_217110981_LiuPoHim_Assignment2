@@ -375,6 +375,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3KK-eA-l6d"/>
                     <connections>
+                        <outlet property="cancelButton" destination="zfd-pJ-NsU" id="hOE-Qx-bAA"/>
                         <outlet property="changePasswordButton" destination="uFD-Xv-g56" id="UgA-dD-jiP"/>
                         <outlet property="confirmPasswordTextField" destination="r8i-Ts-lvs" id="iw2-25-3be"/>
                         <outlet property="errorLabel" destination="7JW-0g-JYZ" id="wKz-ZP-fqM"/>
@@ -507,13 +508,13 @@
         <!--Sign Up View Controller-->
         <scene sceneID="bX4-CV-UBC">
             <objects>
-                <viewController id="QyV-d8-JIR" customClass="SignUpViewController" customModule="VT6002CEM_217110981_LiuPoHim_Assignment2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="QyV-d8-JIR" customClass="SignUpViewController" customModule="VT6002CEM_217110981_LiuPoHim_Assignment2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JDt-yl-uNb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="k3I-lK-W8i">
-                                <rect key="frame" x="40" y="160" width="334" height="350.5"/>
+                                <rect key="frame" x="40" y="204" width="334" height="350.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nick Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="54u-Yy-VKW">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>

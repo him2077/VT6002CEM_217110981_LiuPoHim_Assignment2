@@ -25,7 +25,7 @@ class LocationViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Utilities.setButtonStyle(backButton, cornerRadius: 40.0)
+        Utilities.setButtonStyle(backButton, cornerRadius: 35.0)
         mapView.showsUserLocation = true
         mapView.delegate = self
         

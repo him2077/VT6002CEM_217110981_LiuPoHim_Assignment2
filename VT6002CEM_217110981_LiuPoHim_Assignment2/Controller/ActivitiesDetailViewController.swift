@@ -29,7 +29,7 @@ class ActivitiesDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Utilities.setButtonStyle(locationButton)
+        Utilities.setButtonStyle(locationButton, cornerRadius: 22)
         // Do any additional setup after loading the view.
     }
     

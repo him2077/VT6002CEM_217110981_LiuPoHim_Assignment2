@@ -20,8 +20,8 @@ class UserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Utilities.setButtonStyle(logoutButton)
-        Utilities.setButtonStyle(changePasswordButton)
+        Utilities.setButtonStyle(logoutButton, cornerRadius: 15)
+        Utilities.setButtonStyle(changePasswordButton, cornerRadius: 20)
         
         if UserDefaults.IsExisit(forKey: "IsAutoLogin"){
             IsAutoLogin = userDefaults.bool(forKey: "IsAutoLogin")

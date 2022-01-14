@@ -485,6 +485,22 @@
                                     <constraint firstItem="5g7-U8-Wrk" firstAttribute="height" secondItem="5f8-Y4-2t1" secondAttribute="height" id="Zap-Y1-Opn"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CE-Rm-tAh">
+                                <rect key="frame" x="13" y="52" width="388" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Hong Kong
+ Intangible Cultural Heritage 
+(Traditional Craftsmanship List)</string>
+                                        <attributes>
+                                            <font key="NSFont" size="28" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2f4-Cy-h44"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
